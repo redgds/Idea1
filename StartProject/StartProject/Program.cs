@@ -1,55 +1,29 @@
-﻿//char capitalA = '\x0041';
-//Console.WriteLine(capitalA);
-
-//string myString = "\x0041BCDE\a";
-//Console.WriteLine(myString);
-
-//string verbatim = 
-//    @"The quick
-//    brown fox
-//    jumps over the lazy dog.";
-
-//Console.WriteLine(verbatim);
-
-//bool networkOk = true;
-//Console.WriteLine(networkOk);
+﻿// Program.cs
 using System;
-class Program
+namespace Idea1
 {
-    static void CalculateWindow()
+    class Program
     {
-        double width, height, woodLength, glassArea;
-        const double MAX_WIDTH = 5.0;
-        const double MIN_WIDTH = 0.5;
-        const double MAX_HEIGHT = 3.0;
-        const double MIN_HEIGHT = 0.75;
-        string widthString, heightString;
-
-        do
+        static void Main()
         {
-            Console.Write("Give the width of the window between " + MIN_WIDTH + " and " + MAX_WIDTH + ": ");
-            widthString = Console.ReadLine();
-            width = double.Parse(widthString);
-        } while (width < MIN_WIDTH || width > MAX_WIDTH);
+            OtherCode.TestOtherCode();
 
-        do
-        {
-            Console.Write("Give the height of the window between " + MIN_HEIGHT + " and " + MAX_HEIGHT + ": ");
-            heightString = Console.ReadLine();
-            height = double.Parse(heightString);
-        } while (height < MIN_HEIGHT || height > MAX_HEIGHT);
 
-        woodLength = 2 * (width + height) * 3.25;
+            //const double MAX_WIDTH = 5.0;
+            //const double MIN_WIDTH = 0.5;
 
-        glassArea = 2 * (width * height);
+            //double windowWidth = Value.ReadValue("Enter width of window: ", MIN_WIDTH, MAX_WIDTH);
+            //Console.WriteLine("Width: " + windowWidth);
+            //double age = Value.ReadValue(prompt: "Enter your age: ", low: 0, high: 70);
+            //Console.WriteLine("Age: " + age);
 
-        Console.WriteLine("The length of the wood is " + woodLength + " feet");
-        Console.WriteLine("The area of the glass is " + glassArea + " square meters");
-    }
-    static void Main()
-    {
-        CalculateWindow();
+
+            //WindowCalculation.CalculateWindow();
+
+
+            RedOut.TestAddOne();
+            RedOut.TestAddRef();
+            RedOut.TestGetCoords();
+        }
     }
 }
-
-// test test test3
