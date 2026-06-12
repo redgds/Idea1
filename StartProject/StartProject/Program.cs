@@ -6,7 +6,7 @@ namespace Idea1
     {
         static void Main()
         {
-            OtherCode.TestOtherCode();
+            //OtherCode.TestOtherCode();
 
 
             //const double MAX_WIDTH = 5.0;
@@ -21,9 +21,19 @@ namespace Idea1
             //WindowCalculation.CalculateWindow();
 
 
-            RedOut.TestAddOne();
-            RedOut.TestAddRef();
-            RedOut.TestGetCoords();
+            //RedOut.TestAddOne();
+            //RedOut.TestAddRef();
+            //RedOut.TestGetCoords();
+
+
+            //DataMembers.PrintLocalVar();
+
+
+            //Arrays.TestArrays();
+            //Arrays.TwoDArray();
+
+            Arrays.NumberOfMonth(5);
+            Arrays.NumberOfMonth(15);
         }
     }
 }
