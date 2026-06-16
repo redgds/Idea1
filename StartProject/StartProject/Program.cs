@@ -32,8 +32,21 @@ namespace Idea1
             //Arrays.TestArrays();
             //Arrays.TwoDArray();
 
-            Arrays.NumberOfMonth(5);
-            Arrays.NumberOfMonth(15);
+
+            //Arrays.NumberOfMonth(5);
+            //Arrays.NumberOfMonth(15);
+
+
+            //MyExceptions.CatchExceptions();
+
+
+            //SwitchConstruction.TestSwitch();
+
+
+            //Writing.StreamWriting();
+
+            Writing.Reading();
+            Console.ReadLine();
         }
     }
 }
