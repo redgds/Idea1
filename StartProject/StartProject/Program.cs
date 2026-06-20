@@ -4,6 +4,12 @@ namespace Idea1
 {
     class Program
     {
+        enum SeaState
+        {
+            EmptySea,
+            Attacked,
+            Battleship
+        };
         static void Main()
         {
             //OtherCode.TestOtherCode();
@@ -45,8 +51,15 @@ namespace Idea1
 
             //Writing.StreamWriting();
 
-            Writing.Reading();
-            Console.ReadLine();
+            //Writing.Reading();
+
+
+            SeaState state = SeaState.EmptySea;
+            Console.WriteLine(state);
+
+
+            
         }
     }
 }
+
