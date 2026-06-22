@@ -33,5 +33,18 @@ namespace BankApp
             Console.WriteLine("Account State: " + a.Address);
             Console.WriteLine("Account Balance: " + a.Balance);
         }
+
+        public static void StructUse()
+        {
+            StructTest.Account[] Bank = new StructTest.Account[MAX_CUST];
+            Bank[0] = new StructTest.Account { Name = "Rob", Address = "Rob's House", State = AccountState.Active, Balance = 0 };
+            StructTest.PrintAccout(Bank[0]);
+
+            Bank[1].Name = "Jim";
+            Bank[1].Address = "Jim's House";
+            Bank[1].State = AccountState.Active;
+            Bank[1].Balance = 0;
+            StructTest.PrintAccout(Bank[1]);
+        }
     }
 }

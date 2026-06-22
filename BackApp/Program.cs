@@ -1,53 +1,41 @@
-﻿using System;
-namespace BankApp
+﻿using BankApp;
+using BankApp.MyAccounts;
+using System;
+using System.Collections;
+const int MAX_CUST = 100;
+
+//StructTest.StructUse();
+
+//AccountTest.NewAccount();
+
+//AccountTest.TestWithdrawFunds(AccountTest.RobsAccount);
+
+//AccountTest.TestPayInFunds(AccountTest.RobsAccount);
+
+//AccountTest.TestAccountAllowed(AccountTest.RobsAccount);
+
+
+//Account[] Accounts = new Account[MAX_CUST];
+//Accounts[0] = AccountTest.RobsAccount;
+//Accounts[1] = new Account("Jim", "Jim's House");
+//Accounts[2] = new Account("Fred");
+
+IAccount[] accounts = new IAccount[MAX_CUST];
+
+accounts[0] = new CustomerAccount();
+accounts[0].PayInFunds(100);
+Console.WriteLine($"Balance for account 0: {accounts[0].GetBalance()}");
+
+accounts[1] = new BabyAccount();
+accounts[1].PayInFunds(20);
+Console.WriteLine($"Balance for account 1: {accounts[1].GetBalance()}");
+
+if (accounts[0].WithdrawFunds(20))
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            const int MAX_CUST = 100;
-            StructTest.Account[] Bank = new StructTest.Account[MAX_CUST];
-            Bank[0] = new StructTest.Account { Name = "Rob", Address = "Rob's House", State = AccountState.Active, Balance = 0 };
-            StructTest.PrintAccout(Bank[0]);
+    Console.WriteLine("Withdraw OK");
+}
 
-            Bank[1].Name = "Jim";
-            Bank[1].Address = "Jim's House";
-            Bank[1].State = AccountState.Active;
-            Bank[1].Balance = 0;
-            StructTest.PrintAccout(Bank[1]);
-
-            ClassTest RobsAccount = new()
-            {
-                Name = "Rob",
-                // Balance = 0 // unaccessible because Balance is private
-            };
-            Console.WriteLine(RobsAccount.Name); // Rob
-
-
-            //ClassTest Temp = RobsAccount;
-
-            //Temp.Name = "Jim";
-            //Console.WriteLine(Temp.Name); // Jim
-            //Console.WriteLine(RobsAccount.Name); // Jim
-
-            //RobsAccount = new ClassTest
-            //{
-            //    Name = "Jim" // This is a new instance of ClassTest, so it does not affect the previous instance
-            //}; 
-            //Console.WriteLine(RobsAccount.Name);
-
-
-            // RobsAccount.Balance = 0; // unaccessible because Balance is private
-
-
-            if (RobsAccount.WithdrawFunds(5))
-            {
-                Console.WriteLine("Withdrawal successful");
-            }
-            else
-            {
-                Console.WriteLine("Withdrawal failed");
-        }
-        }
-    }
+if (accounts[1].WithdrawFunds(20))
+{
+    Console.WriteLine("Withdraw OK"); // will not execute
 }
