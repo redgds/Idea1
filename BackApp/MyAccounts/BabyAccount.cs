@@ -4,27 +4,37 @@ using System.Text;
 
 namespace BankApp.MyAccounts
 {
-    public class BabyAccount : IAccount
+    public sealed class BabyAccount : CustomerAccount, IAccount
     {
-        private decimal balance = 0;
+        //private decimal balance = 0;
+        public BabyAccount()
+        {
 
-        public bool WithdrawFunds(decimal amount)
+        }
+        public BabyAccount(string name, decimal balance) : base(name, balance)
+        {
+            this.name = name;
+            this.balance = balance;
+        }
+        public override bool WithdrawFunds(decimal amount)
         {
             if (amount > 10)
             {
                 return false;
             }
-            if (balance < amount)
-            {
-                return false;
-            }
-            balance -= amount;
-            return true;
+            //if (balance < amount)
+            //{
+            //    return false;
+            //}
+            //balance -= amount;
+            //return true;
+            return base.WithdrawFunds(amount);
         }
-        public void PayInFunds(decimal amount)
-        {
-            balance += amount;
-        }
-        public decimal GetBalance() { return balance; }
+
+        //public void PayInFunds(decimal amount)
+        //{
+        //    balance += amount;
+        //}
+        //public decimal GetBalance() { return balance; }
     }
 }

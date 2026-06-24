@@ -39,3 +39,5 @@ if (accounts[1].WithdrawFunds(20))
 {
     Console.WriteLine("Withdraw OK"); // will not execute
 }
+
+NewAccount MyAcc = new("Rob Miles", 100);

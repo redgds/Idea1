@@ -6,9 +6,17 @@ namespace BankApp.MyAccounts
 {
     public class CustomerAccount : IAccount
     {
-        private decimal balance = 0;
+        protected decimal balance = 0;
+        protected string name { get; set; } = string.Empty;
+        // private decimal balance = 0;
 
-        public bool WithdrawFunds(decimal amount)
+        public CustomerAccount() { }
+        public CustomerAccount(string name, decimal balance)
+        {
+            this.name = name;
+            this.balance = balance;
+        }
+        public virtual bool WithdrawFunds(decimal amount)
         {
             if (balance < amount)
             {
