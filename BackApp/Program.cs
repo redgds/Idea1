@@ -1,5 +1,6 @@
 ﻿using BankApp;
 using BankApp.MyAccounts;
+using BankApp.PropertyTest;
 using System;
 using System.Collections;
 const int MAX_CUST = 100;
@@ -20,24 +21,35 @@ const int MAX_CUST = 100;
 //Accounts[1] = new Account("Jim", "Jim's House");
 //Accounts[2] = new Account("Fred");
 
-IAccount[] accounts = new IAccount[MAX_CUST];
+//IAccount[] accounts = new IAccount[MAX_CUST];
 
-accounts[0] = new CustomerAccount();
-accounts[0].PayInFunds(100);
-Console.WriteLine($"Balance for account 0: {accounts[0].GetBalance()}");
+//accounts[0] = new CustomerAccount();
+//accounts[0].PayInFunds(100);
+//Console.WriteLine($"Balance for account 0: {accounts[0].GetBalance()}");
 
-accounts[1] = new BabyAccount();
-accounts[1].PayInFunds(20);
-Console.WriteLine($"Balance for account 1: {accounts[1].GetBalance()}");
+//accounts[1] = new BabyAccount();
+//accounts[1].PayInFunds(20);
+//Console.WriteLine($"Balance for account 1: {accounts[1].GetBalance()}");
 
-if (accounts[0].WithdrawFunds(20))
+//if (accounts[0].WithdrawFunds(20))
+//{
+//    Console.WriteLine("Withdraw OK");
+//}
+
+
+//if (accounts[1].WithdrawFunds(20))
+//{
+//    Console.WriteLine("Withdraw OK"); // will not execute
+//}
+
+//NewAccount MyAcc = new("Rob Miles", 100);
+
+
+//Account a = new("Rob", 25);
+//Console.WriteLine(a);
+
+Properties a = new()
 {
-    Console.WriteLine("Withdraw OK");
-}
-
-if (accounts[1].WithdrawFunds(20))
-{
-    Console.WriteLine("Withdraw OK"); // will not execute
-}
-
-NewAccount MyAcc = new("Rob Miles", 100);
+    Age = 10
+};
+Console.WriteLine("Age: " + a.Age);

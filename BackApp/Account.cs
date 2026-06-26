@@ -36,6 +36,12 @@ namespace BankApp
             this(name, address, 0) // constructor chaining
         {
         }
+
+        public Account(string name, decimal balance)
+        {
+            this.name = name;
+            this.balance = balance;
+        }
         
         public Account(string name) :
             this(name, "Unknown", 0) // constructor chaining
@@ -70,6 +76,11 @@ namespace BankApp
         public static bool AccountAllowed(decimal income, int age)
         {
             return income >= minIncome && age >= minAge;
+        }
+
+        public override string ToString()
+        {
+            return "Name " + name + " Balance: " + balance;
         }
     }
 }
